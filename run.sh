@@ -15,13 +15,7 @@ run() {
 	prepare_files $CWD $1
 
 
-	if (( ${test_travis_flag:-0} == 0 )) ; then
-		curl -sS https://getcomposer.org/installer | php  -d detect_unicode=Off -d apc.enable_cli=Off
-		php -d detect_unicode=Off -d apc.enable_cli=Off composer.phar install --dev
-		PHPUNIT=vendor/bin/phpunit
-	else
-		PHPUNIT=phpunit
-	fi
+    PHPUNIT=phpunit
 
 	cloneorupdate "${CWD}/Core" "git://git.typo3.org/Packages/TYPO3.CMS.git" "${2}"
 	cloneorupdate "${CWD}/t3/typo3conf/ext/phpunit" "git://git.typo3.org/TYPO3CMS/Extensions/phpunit.git" "3.6.10"
