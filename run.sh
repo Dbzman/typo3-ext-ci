@@ -162,7 +162,7 @@ while (( $# > 0 )) ; do
 			export "test_${K/-/_}"=$V
 		;;
 
-		4.5|4.6|4.7|6.0|6.1)
+		4.5|4.6|4.7|6.0|6.1|6.2)
 			export "test_typo3_branch"="TYPO3_${token/\./-}"
 		;;
 		master)
